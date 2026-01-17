@@ -22,22 +22,22 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section - Full viewport height with centered content */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12">
-        <div className="flex flex-col items-center">
+      <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-12">
+        <div className="flex flex-col items-center w-full max-w-lg sm:max-w-xl md:max-w-2xl">
           {/* Logo */}
-          <div className="mb-12 animate-fade-in">
+          <div className="mb-8 sm:mb-10 md:mb-12 animate-fade-in">
             <Logo />
           </div>
 
           {/* Navigation */}
-          <div className="animate-fade-in animate-fade-in-delay-1">
+          <div className="animate-fade-in animate-fade-in-delay-1 w-full flex justify-center">
             <Navigation onNavigate={handleNavigate} showContact={showContact} />
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <main className="px-6 md:px-12">
+      <main className="px-4 sm:px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <MissionSection />
         </div>
@@ -45,7 +45,7 @@ const Index = () => {
 
       {/* Contact Section - Shown when clicked */}
       {showContact && (
-        <div className="px-6 md:px-12 animate-fade-in-up">
+        <div className="px-4 sm:px-6 md:px-12 animate-fade-in-up">
           <div className="max-w-6xl mx-auto">
             <ContactSection />
           </div>
@@ -53,7 +53,7 @@ const Index = () => {
       )}
 
       {/* Footer */}
-      <div className="px-6 md:px-12">
+      <div className="px-4 sm:px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <Footer />
         </div>

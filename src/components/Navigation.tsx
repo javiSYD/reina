@@ -11,17 +11,17 @@ const Navigation = ({ onNavigate, showContact }: NavigationProps) => {
   ];
 
   return (
-    <nav className="flex items-center gap-4 md:gap-8">
+    <nav className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 md:gap-6">
       {navItems.map((item, index) => (
-        <span key={item.id} className="flex items-center gap-4 md:gap-8">
+        <span key={item.id} className="flex items-center gap-2 sm:gap-4 md:gap-6">
           <button
             onClick={() => onNavigate(item.id)}
-            className={`nav-link ${item.id === 'contact' && showContact ? 'nav-link-active' : ''}`}
+            className={`nav-link text-xs sm:text-sm whitespace-nowrap ${item.id === 'contact' && showContact ? 'nav-link-active' : ''}`}
           >
             {item.label}
           </button>
           {index < navItems.length - 1 && (
-            <span className="text-muted-foreground/40 text-sm">|</span>
+            <span className="text-muted-foreground/40 text-xs sm:text-sm hidden xs:inline">|</span>
           )}
         </span>
       ))}
