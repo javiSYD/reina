@@ -1,35 +1,29 @@
 interface NavigationProps {
-  activeSection?: string;
+  onNavigate: (section: string) => void;
+  showContact: boolean;
 }
 
-const Navigation = ({ activeSection = 'about' }: NavigationProps) => {
+const Navigation = ({ onNavigate, showContact }: NavigationProps) => {
   const navItems = [
     { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact Us' },
     { id: 'login', label: 'Investor Login' },
   ];
 
-  const scrollToSection = (id: string) => {
-    if (id === 'login') {
-      // Could be replaced with actual login functionality
-      return;
-    }
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <nav className="flex items-center gap-6 md:gap-10">
+    <nav className="flex items-center gap-4 md:gap-8">
       {navItems.map((item, index) => (
-        <button
-          key={item.id}
-          onClick={() => scrollToSection(item.id)}
-          className={`nav-link ${activeSection === item.id ? 'nav-link-active' : ''}`}
-        >
-          {item.label}
-        </button>
+        <span key={item.id} className="flex items-center gap-4 md:gap-8">
+          <button
+            onClick={() => onNavigate(item.id)}
+            className={`nav-link ${item.id === 'contact' && showContact ? 'nav-link-active' : ''}`}
+          >
+            {item.label}
+          </button>
+          {index < navItems.length - 1 && (
+            <span className="text-muted-foreground/40 text-sm">|</span>
+          )}
+        </span>
       ))}
     </nav>
   );

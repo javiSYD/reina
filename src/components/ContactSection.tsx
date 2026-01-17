@@ -21,18 +21,15 @@ const offices: Office[] = [
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-16 md:py-24 border-t border-border">
+    <section id="contact" className="py-16 md:py-20">
       <div className="max-w-4xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-16">
-          {offices.map((office, index) => (
-            <div 
-              key={office.city} 
-              className={`text-center animate-fade-in-up ${index === 0 ? 'animate-fade-in-delay-1' : 'animate-fade-in-delay-2'}`}
-            >
-              <h3 className="font-serif text-2xl font-medium text-foreground mb-4">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-12">
+          {offices.map((office) => (
+            <div key={office.city} className="text-center">
+              <h3 className="font-serif text-xl md:text-2xl font-medium text-foreground mb-4">
                 {office.city}
               </h3>
-              <address className="not-italic text-body leading-relaxed mb-4">
+              <address className="not-italic text-body text-sm leading-relaxed mb-3">
                 {office.address.map((line, i) => (
                   <span key={i}>
                     {line}
@@ -46,14 +43,13 @@ const ContactSection = () => {
                 rel="noopener noreferrer"
                 className="text-link inline-flex items-center gap-1 text-sm"
               >
-                <MapPin size={14} />
-                View Map
+                Map »
               </a>
             </div>
           ))}
         </div>
 
-        <div className="text-center text-body animate-fade-in-up animate-fade-in-delay-3">
+        <div className="text-center text-body text-sm">
           <p className="mb-2">
             For more information, please call{' '}
             <a href="tel:+16173106180" className="text-link">
@@ -62,13 +58,13 @@ const ContactSection = () => {
             or email{' '}
             <a href="mailto:ir@altimeter.com" className="text-link">
               IR@altimeter.com
-            </a>
+            </a>.
           </p>
           <p>
             For media inquiries, please contact{' '}
             <a href="mailto:press@altimeter.com" className="text-link">
               press@altimeter.com
-            </a>
+            </a>.
           </p>
         </div>
       </div>
