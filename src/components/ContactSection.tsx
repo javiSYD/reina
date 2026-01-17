@@ -19,15 +19,15 @@ const offices: Office[] = [
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-12 sm:py-16 md:py-20">
+    <section className="py-6 sm:py-8 md:py-10">
       <div className="max-w-4xl mx-auto px-2">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 md:gap-16 mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 md:gap-14 mb-8 sm:mb-10">
           {offices.map((office) => (
             <div key={office.city} className="text-center">
-              <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-medium text-foreground mb-3 sm:mb-4">
+              <h3 className="font-serif text-base sm:text-lg md:text-xl font-medium text-foreground mb-2 sm:mb-3">
                 {office.city}
               </h3>
-              <address className="not-italic text-body text-xs sm:text-sm leading-relaxed mb-2 sm:mb-3">
+              <address className="not-italic text-body text-xs sm:text-sm leading-relaxed mb-2">
                 {office.address.map((line, i) => (
                   <span key={i}>
                     {line}
@@ -47,7 +47,7 @@ const ContactSection = () => {
           ))}
         </div>
 
-        <div className="text-center text-body text-xs sm:text-sm space-y-1 sm:space-y-2">
+        <div className="text-center text-body text-xs sm:text-sm space-y-1">
           <p>
             For more information, please call{' '}
             <a href="tel:+16173106180" className="text-link whitespace-nowrap">
