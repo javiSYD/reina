@@ -27,9 +27,9 @@ const Index = () => {
   const hasActiveContent = activeSection !== 'none';
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      {/* Main Content Area */}
-      <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 py-8 sm:py-12">
+    <div className="bg-background">
+      {/* Hero Section - Full viewport height */}
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 py-8 sm:py-12">
         {/* Logo */}
         <div className="mb-6 sm:mb-8 md:mb-10 animate-fade-in">
           <Logo onClick={() => setActiveSection('none')} />
@@ -42,14 +42,14 @@ const Index = () => {
 
         {/* Dynamic Content Area */}
         {hasActiveContent && (
-          <div className="w-full max-w-4xl animate-fade-in-up">
+          <div className="w-full max-w-4xl animate-fade-in-up mt-8 sm:mt-10 md:mt-12">
             {activeSection === 'about' && <MissionSection />}
             {activeSection === 'contact' && <ContactSection />}
           </div>
         )}
       </div>
 
-      {/* Footer - Always visible at bottom */}
+      {/* Footer - Below the fold, requires scrolling */}
       <div className="px-4 sm:px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <Footer />
