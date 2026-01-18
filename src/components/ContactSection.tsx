@@ -1,20 +1,24 @@
 interface Office {
   city: string;
   address: string[];
+  mapUrl: string;
 }
 
 const offices: Office[] = [
   {
     city: 'Australia',
     address: ['241 Arthur Street,', 'Teneriffe QLD 4005'],
+    mapUrl: 'https://maps.google.com/?q=241+Arthur+Street+Teneriffe+QLD+4005+Australia',
   },
   {
     city: 'Colombia',
     address: ['Cra. 6 Este, 1a-60.', 'Cajica, Cundinamarca 250240'],
+    mapUrl: 'https://maps.google.com/?q=Cra+6+Este+1a-60+Cajica+Cundinamarca+Colombia',
   },
   {
     city: 'Japan',
     address: ['〒105-0004', '東京都港区新橋2-4-5'],
+    mapUrl: 'https://maps.google.com/?q=東京都港区新橋2-4-5',
   },
 ];
 
@@ -36,6 +40,14 @@ const ContactSection = () => {
                   </span>
                 ))}
               </address>
+              <a
+                href={office.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-2 text-link text-xs sm:text-sm hover:underline"
+              >
+                map››
+              </a>
             </div>
           ))}
         </div>
