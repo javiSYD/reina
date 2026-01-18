@@ -6,9 +6,9 @@ const Logo = ({ onClick }: LogoProps) => {
   return (
     <h1 
       onClick={onClick}
-      className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wider text-foreground select-none text-center cursor-pointer hover:opacity-80 transition-opacity"
+      className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-wider text-foreground select-none text-center cursor-pointer hover:opacity-80 transition-opacity"
     >
-      ALTIMETER
+      JR REINA
     </h1>
   );
 };
