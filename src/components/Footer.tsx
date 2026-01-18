@@ -1,19 +1,15 @@
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="py-8 sm:py-12 md:py-16 border-t border-border">
       <div className="max-w-4xl mx-auto px-2">
         <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed text-center">
-          Altimeter Capital Management, LP is a registered investment adviser with the Securities 
-          and Exchange Commission. Registration does not imply a certain level of skill or training 
-          nor does it imply endorsement by the SEC. This is not an offer or solicitation for the 
-          purchase or sale of any security and should not be construed as such. References to 
-          specific securities and issuers are for illustrative purposes only and are not intended 
-          to be, and should not be interpreted as, recommendations to purchase or sell such securities.
+          JR Reina is a real estate investment management firm. We do not solicit or offer 
+          securities or financial advisory services online. All project information provided 
+          via our website www.jrreina.com is for informational purposes related to real estate 
+          management and does not constitute a public offering of securities.
         </p>
         <p className="text-[10px] sm:text-xs text-muted-foreground text-center mt-4 sm:mt-6">
-          © {currentYear} Altimeter Capital Management, LP. All rights reserved.
+          Copyright © 2026 JR Reina. All rights reserved.
         </p>
       </div>
     </footer>
