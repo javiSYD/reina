@@ -32,7 +32,7 @@ const Index = () => {
       <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 py-8 sm:py-12">
         {/* Logo */}
         <div className="mb-6 sm:mb-8 md:mb-10 animate-fade-in">
-          <Logo />
+          <Logo onClick={() => setActiveSection('none')} />
         </div>
 
         {/* Navigation */}
