@@ -3,18 +3,15 @@ import Logo from '@/components/Logo';
 import Navigation from '@/components/Navigation';
 import MissionSection from '@/components/MissionSection';
 import ContactSection from '@/components/ContactSection';
+import InvestorLogin from '@/components/InvestorLogin';
 import Footer from '@/components/Footer';
 
-type ActiveSection = 'none' | 'about' | 'contact';
+type ActiveSection = 'none' | 'about' | 'contact' | 'login';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState<ActiveSection>('none');
 
   const handleNavigate = (section: string) => {
-    if (section === 'login') {
-      // Handle investor login - could open modal or redirect
-      return;
-    }
     
     // Toggle section - if same section clicked, close it
     if (section === activeSection) {
@@ -45,6 +42,7 @@ const Index = () => {
           <div className="w-full max-w-4xl animate-fade-in-up mt-8 sm:mt-10 md:mt-12">
             {activeSection === 'about' && <MissionSection />}
             {activeSection === 'contact' && <ContactSection />}
+            {activeSection === 'login' && <InvestorLogin />}
           </div>
         )}
       </div>
