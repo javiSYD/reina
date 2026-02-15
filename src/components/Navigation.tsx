@@ -1,6 +1,6 @@
 interface NavigationProps {
   onNavigate: (section: string) => void;
-  activeSection: 'none' | 'about' | 'contact';
+  activeSection: 'none' | 'about' | 'contact' | 'login';
 }
 
 const Navigation = ({ onNavigate, activeSection }: NavigationProps) => {
